@@ -1,7 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd vimenter * if !argc() | Startify | NERDTreeToggle | wincmd p | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <Leader>e :NERDTreeToggle<CR>
 nnoremap <silent> <C-\> :NERDTreeToggle<CR>

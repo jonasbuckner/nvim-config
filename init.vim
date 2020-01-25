@@ -1,11 +1,6 @@
 set nocompatible
 
-call plug#begin(stdpath('data') . '/plugged')
-Plug 'mhinz/vim-startify'
-Plug 'junegunn/vim-easy-align'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
-call plug#end()
+source ~/.config/nvim/plugins.vim
 
 filetype on
 syntax on
@@ -39,20 +34,41 @@ set splitright
 nmap j gj
 nmap k gk
 
-set backupdir=~/.local/share/nvim/backup
-set directory=~/.local/share/nvim/swap
+nmap <Leader>o :set paste!<CR>
+set pastetoggle=<F11>
+
+exec "set backupdir=" . stdpath("data") . "/backup"
+exec "set directory=" . stdpath("data") . "/swap"
 set tags^=./.git/tags
 
-command! Initvim exe 'edit '.stdpath('config').'/init.vim'
+set bg=dark
+let g:gruvbox_contrast_dark = "medium"
+colorscheme gruvbox
 
-" set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%{FugitiveStatusline()}%h%m%r%y%=%c,%l/%L\ %P
+set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%{fugitive#Statusline()}%h%m%r%y%=%c,%l/%L\ %P
 
+" Remove Trailing Whitespace
 autocmd BufWritePre * %s/\s\+$//e
 
+" Commands
+command! Initvim exe 'edit '.stdpath('config').'/init.vim'
+
+" Functions
+exe "source " . stdpath('config') . "/functions.vim"
+
+" Mappings
+nmap <silent><C-P> :FZF<cr>
+
+" Languages
+exe "source " . stdpath('config') . "/lang/javascript.vim"
+exe "source " . stdpath('config') . "/lang/php.vim"
+exe "source " . stdpath('config') . "/lang/html.vim"
+
 " NERDTree
-source ~/.config/nvim/nerdtree.vim
+exe "source " . stdpath('config') . "/nerdtree.vim"
 
 " EasyAlign
-source ~/.config/nvim/easyalign.vim
+exe "source " . stdpath('config') . "/easyalign.vim"
 
-" Startify
+" Startup
+autocmd vimenter * if !argc() | Startify | NERDTreeToggle | wincmd p | endif

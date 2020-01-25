@@ -1,0 +1,27 @@
+call plug#begin(stdpath('data') . '/plugged')
+Plug 'adoy/vim-php-refactoring-toolbox'
+Plug 'airblade/vim-gitgutter'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/gv.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'mhinz/vim-janah'
+Plug 'mhinz/vim-startify'
+Plug 'morhetz/gruvbox'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'rayburgemeestre/phpfolding.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+call plug#end()

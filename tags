@@ -1,0 +1,10 @@
+plugins	plugins.vim	4
+functions	functions.vim	4
+mappings	mappings.vim	4
+javascript	lang/javascript.vim	4
+php	lang/php.vim	4
+html	lang/html.vim	4
+nerdtree	plug/nerdtree.vim	4
+easyalign	plug/easyalign.vim	4
+navigator	plug/tmux-navigator.vim	4
+tmux	plug/tmux-navigator.vim	4

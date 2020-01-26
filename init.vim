@@ -1,6 +1,9 @@
 set nocompatible
 
-source ~/.config/nvim/plugins.vim
+" Useful Variables
+let sourceconfig = "source " . stdpath('config') " Reuse of Config Path
+
+exe sourceconfig . "/plugins.vim"
 
 filetype on
 syntax on
@@ -31,6 +34,11 @@ set smartcase
 set splitbelow
 set splitright
 
+set list
+set listchars=tab:>- " Make tab characters visible
+
+set tags=./tags
+
 nmap j gj
 nmap k gk
 
@@ -54,21 +62,24 @@ autocmd BufWritePre * %s/\s\+$//e
 command! Initvim exe 'edit '.stdpath('config').'/init.vim'
 
 " Functions
-exe "source " . stdpath('config') . "/functions.vim"
+exe sourceconfig . "/functions.vim"
 
 " Mappings
 nmap <silent><C-P> :FZF<cr>
 
 " Languages
-exe "source " . stdpath('config') . "/lang/javascript.vim"
-exe "source " . stdpath('config') . "/lang/php.vim"
-exe "source " . stdpath('config') . "/lang/html.vim"
+exe sourceconfig . "/lang/javascript.vim"
+exe sourceconfig . "/lang/php.vim"
+exe sourceconfig . "/lang/html.vim"
 
 " NERDTree
-exe "source " . stdpath('config') . "/nerdtree.vim"
+exe sourceconfig . "/plug/nerdtree.vim"
 
 " EasyAlign
-exe "source " . stdpath('config') . "/easyalign.vim"
+exe sourceconfig . "/plug/easyalign.vim"
+
+" Tmux Navigator
+exe sourceconfig . "/plug/tmux-navigator.vim"
 
 " Startup
 autocmd vimenter * if !argc() | Startify | NERDTreeToggle | wincmd p | endif

@@ -29,6 +29,7 @@ set hidden
 set modeline
 set t_ut=
 
+set hlsearch
 set incsearch
 set showmatch
 set ignorecase
@@ -79,6 +80,8 @@ nmap <silent><C-P> :FZF<cr>
 exe sourceconfig . "/lang/javascript.vim"
 exe sourceconfig . "/lang/php.vim"
 exe sourceconfig . "/lang/html.vim"
+exe sourceconfig . "/lang/python.vim"
+exe sourceconfig . "/lang/docker.vim"
 
 " === Plugin Settings === {{{1
 " ==================================
@@ -95,6 +98,7 @@ exe sourceconfig . "/plug/tmux-navigator.vim"
 
 " NerdCommenter
 map <C-_> <plug>NERDCommenterToggle
+nmap <Leader>c<Space> <plug>NERDCommenterToggle
 let g:NERDDefaultAlign='start'
 
 " === Startup === {{{1

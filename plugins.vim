@@ -46,6 +46,7 @@ Plug 'shawncplus/phpcomplete.vim'
 
 " Python
 Plug 'davidhalter/jedi-vim'
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+" Python3 and pynvim required
+" Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for': 'python' }
 Plug 'Vimjas/vim-python-pep8-indent'
 call plug#end()
